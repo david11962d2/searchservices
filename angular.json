@@ -24,8 +24,13 @@
             ],
             "styles": [
               "src/styles.css"
+
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/funciones.js",
+              "src/assets/js/jquery.shuffleLetters.js"
+
+            ]
           },
           "configurations": {
             "production": {

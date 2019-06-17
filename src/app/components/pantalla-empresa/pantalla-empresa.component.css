@@ -1,0 +1,48 @@
+.margin_top_bot {
+    margin: 7% 0 20% 0;
+}
+
+.form {
+    border-bottom: 1.5px solid rgba(114, 110, 110, 0.815);
+    padding: 5%;
+    border-top: 1.5px solid rgba(114, 110, 110, 0.815);
+}
+
+h1,
+h2 {
+    /* font-family: 'Cutive Mono', monospace; */
+}
+
+p {
+    /* font-family: 'Cutive Mono', monospace; */
+    /* font-family: 'Overpass Mono', monospace; */
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.textoCabeh2 {
+    padding: 2% 2% 0 0;
+    margin: 0;
+    font-family: 'Cutive Mono', monospace;
+}
+
+* {
+    font-family: 'Cutive Mono', monospace;
+    font-weight: 600;
+}
+
+.textoCabeh3 {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.imaPortada {
+    padding: 2% 2% 0 0;
+    margin: 0;
+}
+
+.margin-r {
+    margin-right: 2%;
+}
+
+.conditionalClass {
+    border: 3px solid #75473f;
+}

@@ -1,0 +1,68 @@
+<div class="top topTitulo topCursos topOtrosCursos topHeader">
+
+</div>
+<div class="jumbotron jumbotron-fluid animated fadeIn fast sombra1">
+    <div class="col-md-10 offset-md-1">
+        <h1 class="display-5"><span style="opacity:0">P</span>
+            <span>Lista de Servicios</span></h1>
+        <!-- id="txtmezclar" -->
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card-header card_1">
+                <h4 class="">Servicios</h4>
+                <div class="form-inline my-2 my-lg-0 row">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" (keyup.enter)="buscarTexto(texto.value,'texto')" #texto>
+                    <button (click)="buscarTexto(texto.value, 'texto')" class="btn btn-outline-warning my-2 my-sm-0" type="button">Buscar</button>
+                </div>
+                <div class="form-group row margin-top">
+                    <label class="col-1 col-form-label">Ubicación</label>
+                    <div class="col-md-4">
+                        <select class="form-control" #ubic name="ubicaciones" (change)="buscarTexto(ubic.value,'ubicacion')">
+                            <option value="">Filtrar por Ubicación</option>
+                            <option *ngFor="let ubi of portUbicacion"
+                                    [value]="ubi">{{ubi}}
+                            </option>
+                      </select>
+                    </div>
+                    <label class="col-2 col-form-label text-right">Tipo Actividad</label>
+                    <div class="col-md-4">
+                        <select class="form-control" #tip name="tipoActividad" (change)="buscarTexto(tip.value,'actividad')">
+                        <option value="">Filtrar por Actividad</option>
+                        <option *ngFor="let tip of portTipo"
+                                [value]="tip">{{tip}}
+                        </option>
+                  </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card a col-md-3 animated zoomIn slow" *ngFor="let port of portafolio|slice:ini: k; let i = index">
+                    <div class="capaMaster">
+                        <div class="capa"></div>
+                        <div class="capa2">
+                            <h2>{{ port.empresa}}</h2>
+                            <h5 style="font-family: 'IBM Plex Mono', monospace;"></h5>
+                        </div>
+                    </div>
+
+                    <img class="card-img-top top" [src]="port.url|noimage" [alt]="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ port.ubicacion }}</h5>
+                        <p class="card-text">{{ port.descripcion | slice:0:100 }} ...</p>
+                        <button *ngIf="port.pos; else indexi" (click)="verPort(port.pos)" type="button" class="btn btn-warning btn-block">Ver Servicio{{i}}</button>
+                        <ng-template #indexi>
+                            <button (click)="verPort(i)" type="button" class="btn btn-warning btn-block">Ver Servicio{{i}}</button>
+                        </ng-template>
+                        <!--(click)="verPort(i)" <a [routerLink]="['/portfolio',i]" class="btn btn-warning btn-block">Ver más</a> -->
+                    </div>
+
+                </div>
+
+            </div>
+            <button (click)="cargarMas()" class="down btn btn-outline-dark my-2 my-sm-0 btn-block" type="button">Cargar Mas ...</button>
+        </div>
+    </div>
+</div>

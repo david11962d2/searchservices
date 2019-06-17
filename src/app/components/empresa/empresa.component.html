@@ -1,0 +1,31 @@
+<div class="top topTitulo topCursos topOtrosCursos topHeader"></div>
+<div class="container">
+    <div class="row margin_top_bot">
+        <div class="col-md-6 offset-md-3  animated fadeInRight fast" *ngIf="authService.user | async">
+            <h2 class="text-center textoCabeh2">Registro Empresa</h2>
+
+            <div Class="form">
+                <div class="form-group">
+                    <label>Email Empresa</label>
+                    <input [(ngModel)]="cliente.emailEmpr" value={{cliente.emailEmpr}} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Empresa">
+                </div>
+                <div class="form-group">
+                    <label>Email Empresa</label>
+                    <input [(ngModel)]="cliente.mobilEmpr" value={{cliente.mobilEmpr}} type="text" class="form-control" id="exampleInputTelfono1" aria-describedby="emailHelp" placeholder="Télefono Empresa">
+                </div>
+                <div class="form-group">
+                    <label>Empresa</label>
+                    <input [(ngModel)]="cliente.nombreEmpr" value={{cliente.nombreEmpr}} type="text" class="form-control" id="exampleInputPassword1" placeholder="Nombre de la Empresa">
+                </div>
+                <button (click)="guardar()" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+        <ng-template #logged>
+            <div class="col-md-6 offset-md-3  animated fadeIn fast">
+                <div Class="text-center">
+                    <h3>Ya Estas Registrado!!!!</h3>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

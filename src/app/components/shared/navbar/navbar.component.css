@@ -1,0 +1,25 @@
+.sombra {
+    /* -webkit-box-shadow: 0px 17px 32px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 17px 32px -10px rgba(0,0,0,0.75);
+  box-shadow: 0px 17px 32px -10px rgba(0,0,0,0.75);
+   */
+    -webkit-box-shadow: 2px 3px 9px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 3px 9px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 3px 9px -1px rgba(0, 0, 0, 0.75);
+}
+
+nav {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.black {
+    transition: background 0.5s ease-in, height 0.5s ease-in;
+}
+
+.margin_derc {
+    margin-right: 1%
+}
+
+.d-inline {
+    margin-right: 1%;
+}

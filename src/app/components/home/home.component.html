@@ -1,0 +1,35 @@
+<div class="topHeader topCursos topOtrosCursos">
+
+</div>
+<div class="container-fluid">
+    <div class="row" style="margin-top:3%;">
+        <div class="col-12">
+            <div class="card shadow-lg">
+                <div class="card-header card_1">
+                    <h4 class="">Servicios</h4>
+                    <div class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" (keyup.enter)="buscarTexto(texto.value)" #texto>
+                        <button (click)="buscarTexto(texto.value)" class="btn btn-outline-warning my-2 my-sm-0" type="button">Buscar</button>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="card a col-md-3 animated zoomIn slow" *ngFor="let port of portafolio| slice:ini: k; let i = index">
+                                    <img class="card-img-top ima" [src]="port.url | noimage" [alt]="">
+                                    <div class="card-body">
+                                        <h5 class="titulo">{{ port.tipo}}</h5>
+                                        <h5 class="card-title">{{ port.ubicacion }}</h5>
+                                        <p class="card-text">{{ port.descripcion | slice:0:100 }} ...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button (click)="cargarMas()" class="down btn btn-outline-dark my-2 my-sm-0" type="button">Cargar Mas ...</button>
+            </div>
+        </div>
+    </div>
+</div>

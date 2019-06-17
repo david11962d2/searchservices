@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <nav class="navbar black fixed-top navbar-expand-lg navbar-dark sombra">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/imagenes/ico/favicon-32x32.png" width="30" height="30" alt="">
+                </a>
+                <a class="navbar-brand" style="color:white">SearchSercives.com</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                <!-- active -->
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto col-6">
+
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['home']">Inicio <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['about']">Sobre</a>
+                        </li>
+                        <li [ngSwitch]="authService.cliente[0].key" class="nav-item animated fadeIn fast" routerLinkActive="active" *ngIf="authService.user | async">
+                            <a class="nav-link" *ngSwitchCase='90' [routerLink]="['perfilEmpresa']" style='color:maroon;font-weight:600'>Perfil</a>
+                            <a class="nav-link" *ngSwitchCase='89' [routerLink]="['perfilServicio']" style='color:maroon;font-weight:600'>Perfil</a>
+                            <a class="nav-link" *ngSwitchCase='0' [routerLink]="['perfilServicio']" style='color:maroon;font-weight:600'>Perfil</a>
+                        </li>
+                        <li [ngSwitch]="authService.cliente[0].key" class="nav-item animated fadeIn fast" routerLinkActive="active" *ngIf="authService.user | async">
+                            <a class="nav-link" *ngSwitchCase='90' [routerLink]="['portafolio']" style='color:maroon;font-weight:600'>Servicios</a>
+                        </li>
+                    </ul>
+
+                    <div class="text-right">
+                        <p *ngIf="authService.user | async" class="d-inline my-2 my-lg-0">Welcome {{ (authService.user | async)?.email }}</p>
+                        <button class="btn btn-warning my-2 my-sm-0 btn-sm" type="button" (click)="logout()" *ngIf="authService.user | async">Logout</button>
+                    </div>
+                    <div class="text-right" *ngIf="!(authService.user | async); else elseBlock" class="form-inline my-2 my-lg-0 margin_derc">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="button" [routerLink]="['signup']">Registrar</button>
+                    </div>
+
+                    <div class="text-right" *ngIf="!(authService.user | async) else elseBlock" class="form-inline my-2 my-lg-0" routerLinkActive="active">
+                        <button class="btn btn-warning my-2 my-sm-0" type="button" [routerLink]="['login']">Login</button>
+                    </div>
+                    <ng-template #elseBlock class="display:none"></ng-template>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+</div>
+
+<!-- ng g c ruta crear un nuevo componente -->

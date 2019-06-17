@@ -1,0 +1,22 @@
+<div class="top topTitulo topCursos topOtrosCursos topHeader dive"></div>
+<div class="container-fluid">
+    <div class="row margin_top_bot">
+        <div class="col-md-6 offset-md-3  animated fadeIn fast">
+            <h2 class="text-center textoCabeh2">Entrar en la aplicación</h2>
+            <div class="text-center textoCabeh2 animated fadeIn fast" *ngIf="!this.authService.isLogin" style="color:red">
+                <h3>{{this.authService.messageIt}}</h3>
+            </div>
+            <div Class="form" *ngIf="!(authService.user | async)">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input [(ngModel)]="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input [(ngModel)]="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <button (click)="login()" class="btn btn-primary btn-block">Entrar</button>
+            </div>
+        </div>
+    </div>
+</div>

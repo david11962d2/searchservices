@@ -1,0 +1,60 @@
+<div class="top topTitulo topCursos topOtrosCursos topHeader"></div>
+<div class="container-fluid">
+    <div class="row margin_top_bot">
+        <div class="col-md-10 offset-md-1  animated fadeIn fast">
+            <h2 class="text-center textoCabeh2">Datos Empresa</h2>
+
+            <div Class="form" *ngFor='let client of cliente'>
+                <h5>Usuario : {{client.id}}</h5>
+                <div class="form-group">
+                    <label>Email Empresa</label>
+
+                    <input type="text" class="form-control" #mailEmp value={{client.emailEmpr}} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Empresa">
+                </div>
+                <div class="form-group">
+                    <label>Télefono Empresa</label>
+                    <input type="text" class="form-control" #mobilEmp value={{client.mobilEmpr}} id="exampleInputTelfono1" aria-describedby="emailHelp" placeholder="Télefono Empresa">
+                </div>
+                <div class="form-group">
+                    <label>Nombre Empresa</label>
+                    <input type="text" class="form-control" #nombreEmp value={{client.nombreEmpr}} id="exampleInputPassword1" placeholder="Nombre de la Empresa">
+                </div>
+                <button (click)="edicion(true)" class="btn btn-primary btn-sm margin-r">Editar</button>
+                <button (click)="edicion(false)" *ngIf='editr' class="btn btn-warning btn-sm margin-r animated fadeIn fast">Cancelar</button>
+                <button (click)="editEmpresa(nombreEmp.value, mobilEmp.value,mailEmp.value)" *ngIf='editr' class="btn btn-success btn-sm margin-r animated fadeIn fast">Guardar</button>
+
+            </div>
+        </div>
+        <div class="col-md-10 offset-md-1  animated fadeIn fast">
+            <h5 class="textoCabeh2">Reservas</h5>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Nombre Empresa</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Actividad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let res of reservas">
+                        <td scope="row">{{res.fecha}}</td>
+                        <td>{{res.empresa}}</td>
+                        <td>{{res.email}}</td>
+                        <td>{{res.telefono}}</td>
+                        <td>{{res.tipo}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <ng-template #logged>
+            <div class="col-md-6 offset-md-3  animated fadeIn fast">
+                <div Class="text-center">
+                    <h3>Ya Estas Registrado!!!!</h3>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

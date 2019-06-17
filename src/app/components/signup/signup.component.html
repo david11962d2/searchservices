@@ -1,0 +1,38 @@
+<div class="top topTitulo topCursos topOtrosCursos topHeader"></div>
+<div class="container">
+    <div class="row margin_top_bot">
+        <div class="col-md-6 offset-md-3  animated fadeIn fast" *ngIf="!(authService.user | async)else logged;">
+            <h2 class="text-center textoCabeh2">Registrarse</h2>
+            <div class="text-center textoCabeh2 animated fadeIn fast" *ngIf="!this.authService.isSinging" style="color:red">
+                <h3>{{this.authService.messageIt}}</h3>
+            </div>
+            <form Class="form" #formas="ngForm">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input required [(ngModel)]="datos.email" name="email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input required [(ngModel)]="datos.password" name="pass" type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input required [(ngModel)]="datos.inlineRadioOptions" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Buscas un Servicio</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input required [(ngModel)]="datos.inlineRadioOptions" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Ofreces un Servicio</label>
+                </div>
+                <button (click)="signup()" [disabled]="!formas.valid" class="btn btn-primary">Registrar</button>
+            </form>
+        </div>
+        <ng-template #logged>
+            <div class="col-md-6 offset-md-3  animated fadeIn fast">
+                <div Class="text-center">
+                    <h3>Ya Estas Registrado!!!!</h3>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

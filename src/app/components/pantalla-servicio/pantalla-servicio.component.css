@@ -1,0 +1,61 @@
+.margin_top_bot {
+    margin: 7% 0 20% 0;
+}
+
+.top-10 {
+    margin-top: 3%;
+}
+
+.my-thumbnail {
+    margin-bottom: 5%;
+    background-color: whitesmoke;
+    border: 1px solid #DCD6D5;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px 5px rgba(114, 110, 110, 0.815);
+}
+
+.form {
+    border-bottom: 1.5px solid rgba(114, 110, 110, 0.815);
+    padding: 5%;
+    border-top: 1.5px solid rgba(114, 110, 110, 0.815);
+}
+
+p {
+    /* font-family: 'Cutive Mono', monospace; */
+    /* font-family: 'Overpass Mono', monospace; */
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.textoCabeh2 {
+    padding: 2% 2% 0 0;
+    margin: 0;
+    font-family: 'Cutive Mono', monospace;
+}
+
+.textoCabeh3 {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.imaPortada {
+    padding: 2% 2% 0 0;
+    margin: 0;
+}
+
+.margin-r {
+    margin-right: 2%;
+}
+
+img {
+    padding: 2%;
+}
+
+.card-columns {
+    column-count: 2;
+}
+
+.a {
+    border: 0.5px solid orange;
+    -webkit-box-shadow: 6px 6px 23px -6px rgba(0, 0, 0, 0.83);
+    -moz-box-shadow: 6px 6px 23px -6px rgba(0, 0, 0, 0.83);
+    box-shadow: 6px 6px 23px -6px rgba(0, 0, 0, 0.83);
+}

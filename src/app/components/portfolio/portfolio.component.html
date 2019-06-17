@@ -1,0 +1,58 @@
+<div id="top" class="topTitulo topCursos topOtrosCursos topHeader">
+
+</div>
+<div class="jumbotron jumbotron-fluid animated fadeIn fast sombra1">
+    <div class="col-md-10 offset-md-1">
+        <h1 class="display-5">
+            <h3>Servicio :</h3>
+            <span>{{portfolio.empresa}}</span></h1>
+
+    </div>
+</div>
+<div class="container" style="margin-bottom:15%">
+    <div class="row animate fadeIn slowScala125">
+        <div class="col-12 text-justify">
+            <p>
+                {{portfolio.descripcion}}
+            </p>
+        </div>
+        <div class="col-12 ">
+            <div class="row">
+                <div class="col-md-3 bottomFot animated zoomIn slow text-center" *ngFor="let fot of fotox; let i = index">
+                    <img class="" [src]="fotox[i].url" class="img-fluid sombra" alt="" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12" style="margin-top:4%;">
+            <h3>Datos : </h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Email</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Tipo Actividad</th>
+                        <th scope="col">Ubicación</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Reserva</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{portfolio.email}}</th>
+                        <td>{{portfolio.telefono}}</td>
+                        <td>{{portfolio.tipo}}</td>
+                        <td>{{portfolio.ubicacion}}</td>
+                        <td>{{portfolio.precio}}</td>
+                        <td>
+                            <button (click)="guardarReservas(portfolio)" class="btn btn-dark btn-sm margin-r">Reservar</button>
+                        </td>
+                        <td *ngIf="check" class="animate zoomIn fast" style="color:darkgreen"><i class="fas fa-check"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

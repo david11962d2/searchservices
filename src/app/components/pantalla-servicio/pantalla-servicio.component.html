@@ -1,0 +1,109 @@
+<div class="top topTitulo topCursos topOtrosCursos topHeader"></div>
+<div class="container-fluid animated fadeIn fast">
+    <div class="row margin_top_bot">
+        <div class="col-md-6 top-10">
+            <div class="row text-center">
+
+                <div class="card-columns">
+                    <div class="card a animated zoomIn slow" *ngFor="let item of fotos; let i = index">
+                        <img class="card-img-top " [src]="item.url" [alt]="">
+                        <div class="card-body">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="offset-md-1 col-md-10  my-thumbnail animated fadeIn slow" *ngFor="let item of this.fotos">
+                    <img [src]="item.url" class="img-fluid" alt="Responsive image">
+                </div> -->
+            </div>
+        </div>
+        <!-- offset-md-1 -->
+        <div class="col-md-6 ">
+            <h2 class="text-center textoCabeh2">Datos Servicio</h2>
+            <div Class="form" *ngFor='let servis of servicio'>
+                <h5>Usuario : {{servis.ids}}</h5>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input [(ngModel)]="servis.email" #email value={{servis.email}} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Empresa">
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input [(ngModel)]="servis.telefono" #telefono value={{servis.telefono}} type="text" class="form-control" id="exampleInputTelfono1" aria-describedby="emailHelp" placeholder="Télefono Empresa">
+                </div>
+                <div class="form-group">
+                    <label>Empresa</label>
+                    <input [(ngModel)]="servis.empresa" #empresa value={{servis.empresa}} type="text" class="form-control" id="exampleInputPassword1" placeholder="Nombre de la Empresa">
+                </div>
+                <div class="form-group">
+                    <label>Tipo Servicio</label>
+                    <input [(ngModel)]="servis.tipo" #tipServicio value={{servis.tipo}} type="text" class="form-control" id="exampleInputPassword1" placeholder="Nombre de la Empresa">
+                </div>
+                <div class="form-group">
+                    <label>Ubicación</label>
+                    <input [(ngModel)]="servis.ubicacion" #ubicacion value={{servis.ubicacion}} type="text" class="form-control" id="exampleInputPassword1" placeholder="Nombre de la Empresa">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Descripción</span>
+                    </div>
+                    <textarea [(ngModel)]="servis.descripcion" #descripcion value={{servis.descripcion}} class="form-control" aria-label="With textarea"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Precio</label>
+                    <input [(ngModel)]="servis.precio" #precio value={{servis.precio}} type="text" class="form-control" id="exampleInputPassword1" placeholder="Nombre de la Empresa">
+                </div>
+                <div class="form-check form-check-inline">
+                    <input [(ngModel)]="servis.tipoCliente" #tipCliente class="form-check-input" type="radio" name="tipoRadio" id="inlineRadio1" value="lite">
+                    <label class="form-check-label" for="inlineRadio1">Cliente lite 29,90€ </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input [(ngModel)]="servis.tipoCliente" #tipCliente class="form-check-input" type="radio" name="tipoRadio" id="inlineRadio2" value="full">
+                    <label class="form-check-label" for="inlineRadio2">Cliente Completo 49,90€</label>
+                </div>
+                <div class="col-md-12" style="margin-top:2%">
+                    <button (click)="edicion(true)" class="btn btn-primary btn-sm margin-r">Editar</button>
+                    <button (click)="edicion(false)" *ngIf='editr' class="btn btn-warning btn-sm margin-r animated fadeIn fast">Cancelar</button>
+                    <button (click)="editServicio(email.value,
+                                                  telefono.value,
+                                                  empresa.value,
+                                                  tipServicio.value,
+                                                  ubicacion.value,
+                                                  descripcion.value,
+                                                  precio.value,
+                                                  servis.tipoCliente)" *ngIf='editr' class="btn btn-success btn-sm margin-r animated fadeIn fast">Guardar</button>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-md-10 offset-md-1  animated fadeIn fast">
+            <h5 class="textoCabeh2">Reservas</h5>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Nombre Empresa</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Teléfono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let res of reservas">
+                        <td scope="row">{{res.fecha}}</td>
+                        <td>{{res.nombreEmpr}}</td>
+                        <td>{{res.emailEmpr}}</td>
+                        <td>{{res.mobilEmpr}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <ng-template #logged>
+            <div class="col-md-6 offset-md-3  animated fadeIn fast">
+                <div Class="text-center">
+                    <h3>Ya Estas Registrado!!!!</h3>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

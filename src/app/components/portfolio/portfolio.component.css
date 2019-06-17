@@ -1,0 +1,13 @@
+li {
+    list-style: none;
+}
+
+.container {
+    /* font-family: 'Cutive Mono', monospace; */
+    /* font-family: 'Overpass Mono', monospace; */
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.bottomFot {
+    margin-bottom: 1%;
+}
